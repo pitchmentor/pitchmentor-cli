@@ -31,4 +31,5 @@ export const COMMANDS: Record<string, Record<string, OperationId>> = {
     replay: "replayWebhookDelivery",
   },
   "api-keys": { list: "listApiKeys", create: "createApiKey", rotate: "rotateApiKey", revoke: "revokeApiKey" },
+  openapi: { get: "getOpenApi" },
 };
