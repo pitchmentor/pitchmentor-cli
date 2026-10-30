@@ -1,6 +1,6 @@
 {
   "name": "@pitchmentor/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official command-line interface for the Pitch Mentor API, built on @pitchmentor/sdk.",
   "type": "module",
   "bin": {
@@ -16,12 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pitchmentor/sdk.git",
-    "directory": "cli"
+    "url": "git+https://github.com/pitchmentor/pitchmentor-cli.git"
   },
   "homepage": "https://pitchmentor.net/docs",
   "bugs": {
-    "url": "https://github.com/pitchmentor/sdk/issues"
+    "url": "https://github.com/pitchmentor/pitchmentor-cli/issues"
   },
   "engines": {
     "node": ">=20"
@@ -41,5 +40,9 @@
     "sales-coaching",
     "cli"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^6.0.3"
+  }
 }

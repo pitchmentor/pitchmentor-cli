@@ -1,5 +1,7 @@
 # @pitchmentor/cli
 
+[![npm](https://img.shields.io/npm/v/@pitchmentor/cli?logo=npm&color=cb3837)](https://www.npmjs.com/package/@pitchmentor/cli) [![CI](https://github.com/pitchmentor/pitchmentor-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/pitchmentor/pitchmentor-cli/actions/workflows/ci.yml) [![MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Official command-line interface for the [Pitch Mentor](https://pitchmentor.net) API, built on
 [`@pitchmentor/sdk`](https://www.npmjs.com/package/@pitchmentor/sdk). Node 20+.
 
@@ -88,6 +90,27 @@ Manage endpoints with `pitchmentor webhooks …` (`create`, `update`, `rotate-se
 To verify incoming webhook signatures in your server, use `verifyWebhook` from
 [`@pitchmentor/sdk`](https://www.npmjs.com/package/@pitchmentor/sdk) (or the Python / Go SDK).
 
+## Development
+
+```bash
+npm install
+npm test          # build + node:test
+```
+
+Commands come from the operations of the published [`@pitchmentor/sdk`](https://github.com/pitchmentor/pitchmentor-node);
+their names live in [`src/commands.ts`](src/commands.ts). After bumping the SDK dependency, the tests fail until every new
+operation has a command name.
+
+## Releasing
+
+1. Bump `version` in `package.json` (`scripts/check-version.sh X.Y.Z`), merge to `main`.
+2. `git tag vX.Y.Z && git push origin vX.Y.Z`. The [Release workflow](.github/workflows/release.yml) tests, publishes to npm
+   with provenance and creates the GitHub Release.
+
+## Support
+
+[Docs](https://pitchmentor.net/docs) · [Status](https://pitchmentor.net/status) · [Discord](https://discord.gg/SkcxVEJ6wQ). Security issues: see the [security policy](https://github.com/pitchmentor/.github/blob/main/SECURITY.md).
+
 ## License
 
-MIT
+[MIT](LICENSE)
